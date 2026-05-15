@@ -9,12 +9,21 @@ let package = Package(
     products: [
         .library(
             name: "TensorFlowLiteSwift",
-            targets: ["TensorFlowLiteSwift"]
+            targets: [
+                "TensorFlowLiteC",
+                "TensorFlowLiteSwift"
+            ]
         )
     ],
     targets: [
         .target(
-            name: "TensorFlowLiteSwift"
-        )
+            name: "TensorFlowLiteSwift",
+            linkerSettings: [.linkedLibrary("c++")]
+        ),
+        .binaryTarget(
+            name: "TensorFlowLiteC",
+            url: "https://api.github.com/repos/tareksabry1337/TensorFlowLiteC/releases/assets/166724021.zip",
+            checksum: "a83c0845f034bf7477c895fb0a85394f492e70422008ed83fcc6a025d507d771"
+        ),
     ]
 )

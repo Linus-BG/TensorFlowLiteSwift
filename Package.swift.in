@@ -11,7 +11,6 @@ let package = Package(
             name: "TensorFlowLiteSwift",
             targets: [
                 "TensorFlowLiteC",
-                "TensorFlowLiteCCoreML",
                 "TensorFlowLiteSwift"
             ]
         )
@@ -26,10 +25,5 @@ let package = Package(
             url: "{{TENSOR_FLOW_LITE_C_API_URL}}",
             checksum: "{{TENSOR_FLOW_LITE_C_CHECKSUM}}"
         ),
-        .binaryTarget(
-            name: "TensorFlowLiteCCoreML",
-            url: "{{TENSOR_FLOW_LITE_C_CORE_ML_API_URL}}",
-            checksum: "{{TENSOR_FLOW_LITE_C_CORE_ML_CHECKSUM}}"
-        )
     ]
 )
